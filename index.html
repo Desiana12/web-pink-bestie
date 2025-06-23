@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SMKS PUMA Geologi Pertambangan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>
+            SMKS PUMA Geologi Pertambangan <br>
+            <span class="love">💖</span> PRAKERIN MAMASA <span class="love">💖</span>
+        </h1>
+        <p class="semangat">Semangat selalu! 💪🌋⛏️</p>
+        <img src="{{ url_for('static', filename='geologi.png') }}" class="kartun" alt="geologi cartoon">
+    </div>
+
+    <!-- Tempat love yang melayang -->
+    <div class="love-container"></div>
+<script>
+    function createLove() {
+        const love = document.createElement('div');
+        love.classList.add('floating-love');
+        love.innerText = '💖';
+        love.style.left = Math.random() * 100 + 'vw';
+        love.style.animationDuration = 2 + Math.random() * 3 + 's';
+        document.querySelector('.love-container').appendChild(love);
+
+        setTimeout(() => {
+            love.remove();
+        }, 5000);
+    }
+
+    setInterval(createLove, 300); // Love muncul tiap 0.3 detik
+</script>
+</body>
+</html>
+
+
